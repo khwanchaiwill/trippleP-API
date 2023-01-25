@@ -24,7 +24,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', validateCategoryId, (req, res) => {
-  // do your magic!
   CategoryDB.get(req.cate.id)
   .then(cateId => {
     res.status(200).json(cateId)
@@ -93,7 +92,6 @@ router.put('/:id', validateCategoryId, (req, res) => {
       })
 });
 
-// custom middleware
 
 function validateCategoryId(req, res, next) {
 

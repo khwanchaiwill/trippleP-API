@@ -8,7 +8,6 @@ const ProductDB = require('../data/helper/Products')
 const db = require('../dbConfig')
 
 router.get('/', (req, res) => {
-  // do your magic!
 
   ProductDB.get()
     .then(task => {
@@ -25,7 +24,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', validateResourceId, (req, res) => {
-  // do your magic!
   ProductDB.get(req.resource.id)
   .then(taskId => {
     res.status(200).json(taskId)
@@ -140,10 +138,7 @@ router.put('/:id', validateResourceId, (req, res) => {
       })
 });
 
-// custom middleware
-
 function validateResourceId(req, res, next) {
-  // do your magic!
   ProductDB.get(req.params.id)
   .then(resource => {
     if(resource){
@@ -181,8 +176,7 @@ function validateProjectsId(req, res, next) {
   }
 
   function validateTaskId(req, res, next) {
-    // do your magic!
-    TasksDB.get(req.params.id)
+      TasksDB.get(req.params.id)
     .then(task => {
       if(task){
         req.task = task;

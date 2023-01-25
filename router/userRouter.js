@@ -2,7 +2,6 @@ const express = require('express');
 const { blogToBody } = require('../data/helper/mappers');
 
 const Users = require('../data/helper/user');
-// const db = require('../dbConfig');
 
 const router = express.Router();
 
@@ -82,11 +81,7 @@ router.post('/:id/blogs', (req, res) => {
 router.delete('/:id/blogs', (req, res) => {
   const id = req.params.id;
   const blogData = req.body;
-  // console.log(blogData)
-  // const { id } = req.params; 
-  // blogData.user_id = Number(id);
-  
-  
+
   Users.findById(id)
   .then(user => {
     console.log(user)
