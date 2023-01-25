@@ -7,7 +7,7 @@ const CategoryDB = require('../data/helper/Categories');
 
 const db = require('../data/dbConfig')
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
 
   CategoryDB.get()
     .then(cate => {
