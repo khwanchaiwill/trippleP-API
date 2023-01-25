@@ -8,7 +8,6 @@ const CategoryDB = require('../data/helper/Categories');
 const db = require('../data/dbConfig')
 
 router.get('/', (req, res) => {
-  // do your magic!
 
   CategoryDB.get()
     .then(cate => {
@@ -97,7 +96,7 @@ router.put('/:id', validateCategoryId, (req, res) => {
 // custom middleware
 
 function validateCategoryId(req, res, next) {
-  // do your magic!
+
   CategoryDB.get(req.params.id)
   .then(cate => {
     if(cate){
@@ -135,4 +134,3 @@ function validateUserId(req, res, next) {
   }
   
 module.exports = router;
-// The table and router has been success with category table 
