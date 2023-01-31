@@ -79,14 +79,11 @@ router.post('/:id', validateProjectsId, ( req, res) => {
       })
    
   });
-
-  // post to task directly 
   router.post('/:id/tasks', validateTaskId, ( req, res) => {
    
     const id = req.params.id; 
       console.log(req.params.id)
       const resource = req.body;
-    //   resource.project_id = Number(id);
   ProductDB.insert(resource)
       .then(act => {
         res.status(201).json(act)

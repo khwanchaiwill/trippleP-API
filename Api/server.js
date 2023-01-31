@@ -8,7 +8,6 @@ const CategoryRouter = require('../router/Categories')
 server.use(helmet())
 server.use(express.json());
 server.use(cors())
-
 server.use(logger)
 
 server.use('/api/users', UserRouter) 
