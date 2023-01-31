@@ -45,7 +45,7 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
     return knex.schema
-    .dropTableIfExists('project')
+    .dropTableIfExists('products')
     .dropTableIfExists('catagories')
     .dropTableIfExists('users')
     .dropTableIfExists('admins')

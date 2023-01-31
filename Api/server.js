@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors');
 const helmet = require('helmet');
 const server = express();
 
@@ -12,7 +13,7 @@ server.use(logger)
 
 server.use('/api/users', UserRouter) 
 server.use('/api/category', CategoryRouter)
-server.get('/', (req, res) => {
+server.get("/", (req, res) => {
     res.send('Testing the api')
 })
 
