@@ -1,10 +1,12 @@
 const express = require('express')
-const cors = require('cors');
 const helmet = require('helmet');
-const server = express();
+const cors = require('cors');
 
 const UserRouter = require('../router/userRouter')
 const CategoryRouter = require('../router/Categories')
+
+const server = express();
+
 server.use(helmet())
 server.use(express.json());
 server.use(cors())
