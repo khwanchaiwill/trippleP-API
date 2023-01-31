@@ -3,7 +3,7 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 
-const pgConnection = process.env.DATABASE_URL || "postgresql://postgres@localhost/trippleP-API";
+const pgConnection = process.env.DATABASE_URL || "postgresql://postgres@localhost/tripplep_store";
 module.exports = {
 
   development: {
