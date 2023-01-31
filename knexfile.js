@@ -25,17 +25,17 @@ module.exports = {
     },
   },
 
-  staging: {
-    client: 'pg',
-    connection: pgConnection,
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
+  // staging: {
+  //   client: 'pg',
+  //   connection: pgConnection,
+  //   pool: {
+  //     min: 2,
+  //     max: 10
+  //   },
+  //   migrations: {
+  //     tableName: 'knex_migrations'
+  //   }
+  // },
 
   production: {
     client: 'pg',
