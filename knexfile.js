@@ -2,8 +2,6 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-
-const pgConnection = process.env.DATABASE_URL || "postgresql://postgres@localhost/tripplep_store";
 module.exports = {
 
   development: {
@@ -26,8 +24,12 @@ module.exports = {
   },
 
   // staging: {
-  //   client: 'pg',
-  //   connection: pgConnection,
+  //   client: 'postgresql',
+  //   connection: {
+  //     database: 'my_db',
+  //     user:     'username',
+  //     password: 'password'
+  //   },
   //   pool: {
   //     min: 2,
   //     max: 10
@@ -38,17 +40,21 @@ module.exports = {
   // },
 
   production: {
-    client: 'pg',
-    connection: pgConnection,
+    client: 'sqlite3',
+    connection: {
+      database: 'my_db',
+      user:     'username',
+      password: 'password'
+    },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      directory: './data/migrations'
+      tableName: "./data/migrations",
     },
     seeds: {
-      directory: './data/seeds'
+      tableName: "./data/seeds",
     },
   }
 
