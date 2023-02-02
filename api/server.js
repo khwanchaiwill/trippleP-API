@@ -3,14 +3,16 @@ const cors = require('cors');
 const helmet = require('helmet')
 const server = express();
 
+const mailRoute = require("../router/Router");
+
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
 server.use(logger);
 
+server.use("/mail", mailRoute);
 server.get("/", (req, res) => {
-    res.status(200).json({ Hello: "World, The api is now very working" });
-
+    res.status(200).json({ Hello: "World, The api is working" });
   });
   function logger(req, res, next) {
     console.log(`${req.method} request the ${req.url}`, Date());
