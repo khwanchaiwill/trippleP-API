@@ -1,29 +1,23 @@
-const express = require('express')
-const helmet = require('helmet');
+const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet')
 const server = express();
 
-const UserRouter = require('../router/userRouter')
-const CategoryRouter = require('../router/Categories')
+const mailRoute = require("../router/Router");
 
-
-
-server.use(helmet())
+server.use(helmet());
 server.use(express.json());
-server.use(cors())
-server.use(logger)
+server.use(cors());
+server.use(logger);
 
-server.use("/api/users", UserRouter) 
-server.use("/api/category", CategoryRouter)
+server.use("/mail", mailRoute);
 server.get("/", (req, res) => {
-    res.send('Testing the api')
-})
-
-function logger (req, res, next){
-    console.log(`${req.method} request the ${req.url}`, Date())
+    res.status(200).json({ Hello: "World, The api is working" });
+  });
+  function logger(req, res, next) {
+    console.log(`${req.method} request the ${req.url}`, Date());
     next();
-}
-
-module.exports = server;
-
-
+  }
+  
+  module.exports = server;
+  
